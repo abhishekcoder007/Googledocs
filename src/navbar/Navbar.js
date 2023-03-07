@@ -19,6 +19,7 @@ import FormatIndentIncreaseIcon from "@mui/icons-material/FormatIndentIncrease";
 import SubscriptIcon from "@mui/icons-material/Subscript";
 import SuperscriptIcon from "@mui/icons-material/Superscript";
 import UnfoldMoreIcon from "@mui/icons-material/UnfoldMore";
+import StrikethroughSIcon from '@mui/icons-material/StrikethroughS';
 // import TextFormatIcon from "@mui/icons-material/TextFormat";
 // import FormatShapesIcon from "@mui/icons-material/FormatShapes";
 import FormatColorTextIcon from "@mui/icons-material/FormatColorText";
@@ -64,6 +65,10 @@ function Navbar(props) {
     inputRef.current.click();
   }
 
+  function handlestrike(){
+    document.execCommand("strikeThrough")
+  }
+
   function captureImage(event) {
     if (event.target.files[0]) {
       console.log(event.target.files[0]);
@@ -104,6 +109,7 @@ function Navbar(props) {
         </div>
 
         <FormatBoldIcon style={{ fontSize: "22" }} onClick={props.handlebold} />
+        <StrikethroughSIcon  onClick={handlestrike} />
         <FormatItalicIcon
           style={{ fontSize: "22" }}
           onClick={props.handleItalic}
